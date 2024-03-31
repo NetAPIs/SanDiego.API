@@ -1,0 +1,6 @@
+@SanDiego.API_HostAddress = http://localhost:5230
+
+GET {{SanDiego.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
