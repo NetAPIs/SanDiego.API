@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using SanDiego.API.Data;
 using SanDiego.API.Models;
+using SanDiego.API.Services.RoomService;
 
 namespace SanDiego.API.Controllers
 {
@@ -10,17 +11,17 @@ namespace SanDiego.API.Controllers
     [ApiController]
     public class SanDiegoController : ControllerBase
     {
-        private readonly DataContext _context;
+        private readonly IRoomService _service;
 
-        public SanDiegoController(DataContext context)
+        public SanDiegoController(IRoomService service)
         {
-            _context = context;
+            _service = service;
         }
 
         [HttpGet]
         public async Task<List<Room>> GetRooms()
         {
-            return await _context.Rooms.ToListAsync();
+            return await _service.GetAllRooms();
         }
     }
 }
