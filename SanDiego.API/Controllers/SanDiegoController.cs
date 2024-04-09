@@ -23,5 +23,11 @@ namespace SanDiego.API.Controllers
         {
             return await _service.GetAllRooms();
         }
+
+        [HttpGet("{roomId}")]
+        public async Task<Room> GetRoom(int roomId)
+        {
+            return await _service.GetRoom(roomId);
+        }
     }
 }

@@ -17,5 +17,11 @@ namespace SanDiego.API.Services.RoomService
         {
             return await _context.Rooms.ToListAsync();
         }
+
+        public async Task<Room> GetRoom(int roomId)
+        {
+            var room = await _context.Rooms.FirstOrDefaultAsync(r => r.Id == roomId);
+            return room;
+        }
     }
 }
