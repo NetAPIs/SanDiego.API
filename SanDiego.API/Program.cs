@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using SanDiego.API.Data;
+using SanDiego.API.Services.ReviewService;
 using SanDiego.API.Services.RoomService;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -13,6 +14,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<IRoomService, RoomService>();
+builder.Services.AddScoped<IReviewService, ReviewService>();
 
 var app = builder.Build();
 

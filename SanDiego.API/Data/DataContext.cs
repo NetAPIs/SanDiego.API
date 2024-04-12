@@ -22,5 +22,6 @@ namespace SanDiego.API.Data
         }
 
         public DbSet<Room> Rooms { get; set; }
+        public DbSet <Review> Reviews { get; set; }
     }
 }

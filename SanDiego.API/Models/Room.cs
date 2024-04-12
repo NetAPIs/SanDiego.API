@@ -8,5 +8,6 @@
         public RoomStatus RoomStatus { get; set; } = RoomStatus.Available;
         public RoomType RoomType { get; set; } = RoomType.Single;
         public int Price { get; set; }
+        public List<Review>? Reviews { get; set; } 
     }
 }
